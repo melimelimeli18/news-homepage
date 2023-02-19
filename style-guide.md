@@ -23,6 +23,12 @@ Very dark blue: hsl(240, 100%, 5%)
 
 ## Typography
 
+heading 1 = The Bright Of Future
+heading 2 = NEW, 01,02,03
+heading 3 = heading of the news
+
+text - ordinary sets
+
 ### Body Copy
 
 - Font size (paragraph): 15px
