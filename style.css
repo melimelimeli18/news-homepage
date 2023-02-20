@@ -4,7 +4,7 @@ html{font-size:15px; }
 
 body{
     font-family: 'Inter', sans-serif;
-    margin: 3.5rem 4rem 3.5rem 4rem;
+    padding: 3.5rem 4rem;
     max-width:100%;
 }
 
@@ -30,17 +30,49 @@ body{
 
 .header {
     display: flex;
-    flex-direction:row;
-    width:100%;
-    justify-content:space-between;
-     /* position: absolute; */
+    justify-content:space-between;  /*pas gue iniin, dia tetap berada disamping */
+     align-items: center;
+     background-color: #f2f2f2;
+     position: relative;
+     align-items:center;
+     
 }
-    
+    .logo{
+        top: 0;
+        left: 0;
+    }
+    .navigation-bar{
+        margin-left: auto;
+        display: flex;
+        flex-direction:row;
+    }
     .navbar {
-        padding-left:2rem;
+        margin-left:1.7rem;
         text-decoration:none;
     }
+    .navigation-bar a:hover {
+        color:hsl(5, 85%, 63%);
+    }
 
+    .hamburger-menu{
+        display:none;
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+      }
+
+    .hamburger span {
+        background-color:black;
+        display:block;
+        width: 100%;
+        width:28px;
+        height:2px;
+    }
 .content {
     max-width:100%;
     box-sizing: border-box;
@@ -141,50 +173,30 @@ body{
         padding-top:4rem;
     }
 
-.hamburger-menu{
-    display:none;
-}
 
+   
 
 /* Tablet */
 @media screen and (max-width:768px){
-    /* .navigation-bar {
-        background-image:url('assets\images\icon-menu.svg')
-    } */
-    .navbar {
-        padding-left:2rem;
-    }
-
-
-}
-
-@media screen and (max-width:616px){
-    .flex-grow{
-        flex-grow:5;
+    .header{
+        width:100%;
+        display:flex'
     }
     .navigation-bar {
         display:none;
     }
-    .hamburger-menu{
+      
+    .hamburger-menu {
+        position: block;
         display:block;
-        /* position:fixed;
-        float: right; */
-        transform : (0px,0px);
-        margin-right: 10px;
     }
-    .hamburger {
-        display:flex;
-        flex-direction:column;
-        height:20px;
-        justify-content:space-between;
-        cursor:pointer;
+    .hamburger{
+    
     }
-
-.hamburger span {
-    background-color:black;
-    dislay:block;
-    width:28px;
-    height:2px;
 }
+
+/* phone */
+@media screen and (max-width:410px){
+    
 
 }
