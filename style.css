@@ -9,6 +9,10 @@ body{
     overflow-x:hidden;
 }
 
+body a {
+    text-decoration:none;
+}
+
 .heading1 {
     color: #000000;
     font-weight:800;
@@ -51,7 +55,6 @@ body{
 
     .navbar {
         margin-left:1.7rem;
-        text-decoration:none;
     }
     .navigation-bar a:hover {
         color:hsl(5, 85%, 63%);
@@ -120,6 +123,10 @@ body{
             background-color:hsl(5, 85%, 63%);
             color: hsl(36, 100%, 99%);
             padding: 1rem 2rem;
+            cursor:pointer;
+        }
+        .button a:hover{
+            background-color:hsl(240, 100%, 5%);
         }
     .section2 {
         grid-row:1/span 2;
@@ -143,6 +150,9 @@ body{
             color:hsl(36, 100%, 99%);
             padding-bottom:1rem;
         }
+        .section2 .heading3:hover{
+            color:hsl(35, 77%, 62%);
+        }
         hr{
             border-color:hsl(236, 13%, 42%);
             margin:2rem 0px;
@@ -163,8 +173,16 @@ body{
         .text-section .heading2{
             color:hsl(233, 8%, 79%);
         }
-        .text-section .heading3,.text-section .text {
+        .text-section .heading3{
+            color:black;
             padding-top:1.3rem;
+        }
+            .text-section .heading3:hover{
+                color:hsl(5, 85%, 63%);
+            }
+        .text-section .text {
+            padding-top:1.3rem;
+            color:Dark grayish blue: hsl(236, 13%, 42%);
         }
         .recomendation-section img {
             width:30%;
@@ -208,6 +226,7 @@ body{
         .navigation-bar ul{
             padding-top:1rem;
             color: #fff; /* Set the text color to white */
+            background-color:red;
         }
 
         .navigation-bar ul.show{
