@@ -5,7 +5,8 @@ html{font-size:15px; }
 body{
     font-family: 'Inter', sans-serif;
     padding: 3.5rem 4rem;
-    max-width:100%;
+    width:100vw;
+    overflow-x:hidden;
 }
 
 .heading1 {
@@ -41,11 +42,13 @@ body{
         top: 0;
         left: 0;
     }
-    .navigation-bar{
+    .navigation-bar ul{
         margin-left: auto;
         display: flex;
         flex-direction:row;
+        list-style: none;
     }
+
     .navbar {
         margin-left:1.7rem;
         text-decoration:none;
@@ -179,24 +182,55 @@ body{
 /* Tablet */
 @media screen and (max-width:768px){
     .header{
-        width:100%;
+        /* width:100%; */
         display:flex'
     }
     .navigation-bar {
-        display:none;
+        /* display:none; */
     }
-      
+    
+    .navigation-bar ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        position:absolute;
+        right:0;
+        top:0;
+        background-color:white;
+
+        height:100vh;
+        width:60vw;
+
+        z-index:-1;
+        transform: translateX(100%);
+    }
+        .navigation-bar ul{
+            padding-top:1rem;
+            color: #fff; /* Set the text color to white */
+        }
+
+        .navigation-bar ul.show{
+            transform: translateX(0);
+        }    
     .hamburger-menu {
         position: block;
         display:block;
+        z-index:1;
     }
-    .hamburger{
-    
+
+    .content {
+        display: flex;
+        flex-direction:column;
     }
+    .recomended-section{
+        display: flex;
+        flex-direction:column;
+        /* margin-top:1rem; */
+    }
+        .recomendation-section{
+            margin-top:2rem;
+        }
+
 }
 
-/* phone */
-@media screen and (max-width:410px){
-    
-
-}
