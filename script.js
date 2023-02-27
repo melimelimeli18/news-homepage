@@ -1,16 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    const humbergerMenu = document.querySelector(".hamburger-menu");
-    const navbar = document.querySelector(".navigation-bar");
+    const navbar = document.querySelector(".navigation-bar ul");
+const hamburgerMenu = document.querySelector(".hamburger input");
 
-    humbergerMenu.addEventListener("click", function(){
-        navbar.classList.toggle("show"); //slide responsive
-        navbar.classList.toggle("cross")
-        
-    });
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 767) {
-        navbar.classList.remove('show');
-        }
-    });
+hamburgerMenu.addEventListener("click", function() {
+navbar.classList.toggle("show");
+});
 })
