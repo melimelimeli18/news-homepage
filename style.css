@@ -38,7 +38,6 @@ body a {
     justify-content:space-between;  /*pas gue iniin, dia tetap berada disamping */
      align-items: center;
      position: relative;
-     align-items:center;
      
 }
     .logo{
@@ -77,7 +76,6 @@ body a {
         .hamburger span {
             background-color:black;
             display:block;
-            width: 100%;
             width:28px;
             height:2px;
             padding-top:2px;transition : all 0.5s;
@@ -106,7 +104,6 @@ body a {
     box-sizing: border-box;
     padding-top:3.5rem;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(1250x, max-content));
     grid-template-rows: repeat(auto-fit, minmax(250px, max-content));
     row-gap:4rem;
     column-gap:1rem;
@@ -202,7 +199,7 @@ body a {
             }
         .text-section .text {
             padding-top:1.3rem;
-            color:Dark grayish blue: hsl(236, 13%, 42%);
+            color: hsl(236, 13%, 42%);
         }
         .recomendation-section img {
             width:30%;
@@ -217,7 +214,7 @@ body a {
 /* Tablet */
 @media screen and (max-width:768px){
 body{
-    padding: 2rem 2rem;
+    padding: 2rem 1.5rem;
     overflow-x:hidden;
 }    
     .header{
@@ -231,11 +228,11 @@ body{
         position: absolute;
         margin-left:auto;
         align-items: flex-start;
-        align-content:center;
+        
 
         top: 0;
         right: 0;
-        width:40%;
+        width:65%;
         height: 100vh;
         
         padding-top:; /* adjust this value as needed */
@@ -246,20 +243,24 @@ body{
         transition: 0.3s ease ;
         z-index:0;
         transform: translateX(100%);
-				opacity:1;
+
+         margin:-2rem -1.5rem; /*to against padding inherit */
     }
 
         .navigation-bar ul.show{
-					opacity:1;
-					        visibility: visible;
+            visibility: visible;
             transform: translateX(0%);
-            transition: 0.3s ease 300ms;
+            transition: 0.3s ease 300ms;  
         }    
-				.navigation-bar a, .navigation-bar li {
-					padding-top:2rem;
-					font-weight :400;
-					color:black;
-				}
+            .unorderlist {
+                display:inherit;
+                align-items:flex-start;
+            }
+            .navigation-bar a, .navigation-bar li {
+                padding-top:2rem;
+                font-weight :400;
+                color:black;
+            }
     .hamburger-menu {
         display:flex;
         align-vertical:center;
@@ -318,7 +319,9 @@ body{
         left:0;
         right:0;
         opacity:40%;
+        transition: 0.3s ease 300ms;
     }
+}
 
     
 
