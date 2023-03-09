@@ -17,6 +17,22 @@
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
   },
 }
  </script>
@@ -27,6 +43,8 @@
     The solution that i need to do is, i put the queries style it first, then add md/sd (idk please research this 
     later then add), to dekstop that i made it firtst
 
+    SM itu buat layar yang lebih besar dari 768 bakal kena style.
+    
 
    -->
 
@@ -45,36 +63,38 @@
     .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(0px, -2px);}
     .hamburger input:checked ~ span:nth-child(4){transform : rotate(-45deg);}
     .hamburger input:checked ~ span:nth-child(3){transform:scale(0);}
-    .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;}
-    .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;}
+    /* .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;} */
+    /* md:bg-black max-w-full box-border pt-14 grid grid-rows-auto-fit minmax-250px max-content gap-y-4 gap-x-1 */
+    /* .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;} */
     .navigation-bar ul.show{visibility: visible;transform: translateX(0%);transition: 0.3s ease 300ms;}  
 
   </style>
 </head>
-<body class="px-4 py-14 w-screen overflow-x-hidden sm: py-[2rem] px-[1.5rem]">
+<body class="py-[2rem] px-[1.5rem] sm:px-4 py-14 w-screen overflow-x-hidden  ">
   <div class="pages" ></div> 
-  <div class="header flex justify-between item-center relative sm:w-full flex">
+  <div class="w-full flex header sm:flex justify-between item-center relative ">
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
 
     <div class="navigation-bar">
-      <ul class="unorderlist ml-auto flex flex-row list none 
-          md:flex justify-center flex-col absolute ml-auto align-start top-0 right-0 w-8/12 h-screen
+      <ul class=" flex justify-center flex-col absolute ml-auto align-start top-0 right-0 w-8/12 h-screen
           bg-white overflow-y-auto invisible transition-all duration-300 ease-out z-0 translate-x-full my-[-2rem] mx-[-1.5rem]
-          align-start">
-        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal " 
+          align-start md:unorderlist ml-auto flex flex-row list none ">
+        
+
+        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base " 
           href="#">Home</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal"  
+        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base"  
           href="#"> New</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
           href="#">Popular</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
           href="#"> Trending</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
           href="#"> Categories</a></li>  
       </ul>
-      <div class="hamburger-menu hidden sm:flex ">
+      <div class="flex sm: hamburger-menu hidden">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
         <input type="checkbox" id="nav-check" class="hidden">
         <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform rotate-45 translate-y-[-2px] translate-x-[0px]
@@ -88,7 +108,8 @@
     <!-- do content media queries first, then do the navbar. -->
   </div>
 
-  <div class="content sm:flex flex-col">
+  <div class="content 
+   flex flex-col sm:grid grid-rows-auto-fit minmax-250px max-w-full box-border pt-14  max-content gap-y-4 gap-x-1">
     <div class="image-web h-auto row-start-1 row-end-1col-start-1 col-span-2 bg-cover pr-12">
       <img class="max-w-full w-full object-cover" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
     </div>
