@@ -11,6 +11,24 @@
   <!-- TAILWIND -->
   <!-- <link rel="stylesheet" href="https://cdn.tailwindcss.com/dist/tailwind.2.2.0.min.css"> -->
   <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+  module.exports = {
+  theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+    },
+  },
+}
+ </script>
+  <!-- THINKING AREA
+    Sooo I just know that the default utilites classes on tailwind is work on mobile device, and if I want to design it 
+    to dekstop, i need add a breakpoint!! all of my slicing was so wronggg!!!!! i do dekstop first, not mobile
+
+    The solution that i need to do is, i put the queries style it first, then add md/sd (idk please research this 
+    later then add), to dekstop that i made it firtst
+
+
+   -->
 
 
   <!-- CONVERT TO TAILWIND -->
@@ -20,56 +38,43 @@
     *{padding:0px; margin:0px;box-sizing: border-box;}
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    body{
-    font-family: 'Inter', sans-serif;
-    padding: 3.5rem 4rem;
-    width:100vw;
-    overflow-x:hidden;
-}
+    body{font-family: 'Inter', sans-serif;}
     body a {text-decoration:none;}
-    /* .heading1 {color: #000000;font-weight:800;font-size:3rem; } text-black font-extrabold text-5xl */
     .heading2{font-size:2rem;font-weight:700;}
     .heading3{font-size:1.3rem;font-weight:700;}
-    /* .text {font-size:1rem;font-weight:400;color:hsl(236, 13%, 42%);} */
     .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(0px, -2px);}
     .hamburger input:checked ~ span:nth-child(4){transform : rotate(-45deg);}
     .hamburger input:checked ~ span:nth-child(3){transform:scale(0);}
-    .content {
-    max-width:100%;
-    box-sizing: border-box;
-    padding-top:3.5rem;
-    display:grid;
-    grid-template-rows: repeat(auto-fit, minmax(250px, max-content));
-    /* grid-template-columns: repeat(3, 280px); */
-    row-gap:4rem;
-    column-gap:1rem;
-}
-.recomended-section{
-        grid-column:1/ span 3;
-        grid-row:3;
-        display:flex;
-        padding-top:3rem;
-        /* padding-right:0px;
-        margin-right:0px; */
-    }
+    .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;}
+    .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;}
+    .navigation-bar ul.show{visibility: visible;transform: translateX(0%);transition: 0.3s ease 300ms;}  
+
   </style>
 </head>
-<body>
+<body class="px-4 py-14 w-screen overflow-x-hidden sm: py-[2rem] px-[1.5rem]">
   <div class="pages" ></div> 
-  <div class="header flex justify-between item-center relative">
+  <div class="header flex justify-between item-center relative sm:w-full flex">
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
 
     <div class="navigation-bar">
-      <ul class="unorderlist ml-auto flex flex-row list none">
-        <li><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" href="#">Home</a></li>
-        <li><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" href="#"> New</a></li>
-        <li><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" href="#">Popular</a></li>
-        <li><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" href="#"> Trending</a></li>
-        <li><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" href="#"> Categories</a></li>  
+      <ul class="unorderlist ml-auto flex flex-row list none 
+          md:flex justify-center flex-col absolute ml-auto align-start top-0 right-0 w-8/12 h-screen
+          bg-white overflow-y-auto invisible transition-all duration-300 ease-out z-0 translate-x-full my-[-2rem] mx-[-1.5rem]
+          align-start">
+        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal " 
+          href="#">Home</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal"  
+          href="#"> New</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+          href="#">Popular</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+          href="#"> Trending</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base sm:text-black font-normal" 
+          href="#"> Categories</a></li>  
       </ul>
-      <div class="hamburger-menu hidden">
+      <div class="hamburger-menu hidden sm:flex ">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
         <input type="checkbox" id="nav-check" class="hidden">
         <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform rotate-45 translate-y-[-2px] translate-x-[0px]
@@ -80,20 +85,11 @@
         </label>
       </div>
     </div>
-    
+    <!-- do content media queries first, then do the navbar. -->
   </div>
 
-  <!-- <div class="content
-  max-w-full box-border pt-[3.5rem] grid pt-14 gap-y-16 gap-x-4 grid-rows-[auto-fit, minmax(250px, max-content)]
-  "> -->
-  <div class="content">
-    <div class="image-web 
-    h-auto 
-    row-start-1 row-end-1
-    col-start-1 
-    col-span-2 
-    bg-cover 
-    pr-12">
+  <div class="content sm:flex flex-col">
+    <div class="image-web h-auto row-start-1 row-end-1col-start-1 col-span-2 bg-cover pr-12">
       <img class="max-w-full w-full object-cover" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
     </div>
 

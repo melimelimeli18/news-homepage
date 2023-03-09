@@ -212,6 +212,7 @@ body a {
     }
 
 /* Tablet */
+/* tailwind utilites : md */
 @media screen and (max-width:768px){
 body{
     padding: 2rem 1.5rem;
@@ -240,7 +241,7 @@ body{
         overflow-y: auto;
         visibility: hidden;
 
-        transition: 0.3s ease ;
+        transition: 0.3s ease;
         z-index:0;
         transform: translateX(100%);
 
@@ -263,7 +264,8 @@ body{
             }
     .hamburger-menu {
         display:flex;
-        align-vertical:center;
+        /* align-vertical:center; */
+        align-vertical:middle;
     }
         .hamburger-menu input{
             display:none;
