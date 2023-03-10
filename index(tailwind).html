@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <!-- TAILWIND -->
   <!-- <link rel="stylesheet" href="https://cdn.tailwindcss.com/dist/tailwind.2.2.0.min.css"> -->
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
  <script>
   module.exports = {
@@ -37,7 +40,6 @@
 
 
   <!-- CONVERT TO TAILWIND -->
-  <script src="script.js"></script>
   <title>Frontend Mentor | News homepage</title>
   <style>
     *{padding:0px; margin:0px;box-sizing: border-box;}
@@ -63,12 +65,13 @@
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
-
+<!-- invisible translate-x-full -->
     <div class="navigation-bar">
       <ul class="unorderlist 
-      flex flex-col absolute ml-auto items-start justify-center top-0 right-0 w-[65%] h-screen bg-white overflow-y-auto invisible
-      transition-all duration-300 ease-out z-0 translate-x-full 
-      my-[-2rem] mx-[-1.5rem] sm:visible
+      flex flex-col absolute ml-auto items-start justify-center top-0 right-0 w-[65%] h-screen bg-white overflow-y-auto 
+      invisible translate-x-full
+      transition-all duration-300 ease-out z-0  
+      my-[-2rem] mx-[-1.5rem] 
       ">
         <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>
@@ -81,6 +84,7 @@
         <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#"> Categories</a></li>  
       </ul>
+
       <!-- onclick="showSideBar(this)" -->
       <div class="hamburger-menu flex sm:hidden">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
@@ -93,25 +97,71 @@
         </label>
       </div>
     </div>
-    <!-- do content media queries first, then do the navbar. -->
   </div>
-  <script>
+    <script>
     const hamburger = document.querySelector(".hamburger-menu");
-    hamburger.addEventListener("click",
-    function showSideBar(e){
+    hamburger.addEventListener("click",function showSideBar(e){
       const menu = document.querySelector(".unorderlist");
-      // menu.classList.add('translate-x-0');
-      // menu.classList.add('visible');
-      // BTW YG REMOVE BERJALAN, TAPI NGGA BISA DIBALIKIN LAGI, COBA CARI CARA BUAT BIKIN TOGGLE JS
+      // TOGGLE JS
 
-      menu.classList.remove('invisible');
-      menu.classList.remove('translate-x-full');
-      
+      // menu.classList.remove('invisible');
+      // menu.classList.remove('translate-x-full');
+      // ABOVE THIS IS WORKING
+
+      //ADD
+      // menu.classList.toggle('visible');
+      // menu.classList.toggle('translate-x-0');
+
+      //REMOVE
+      // menu.toggle('invisible');
+      // menu.toggle('translate-x-full');
+     
+      /*
+      ADD = VISIBLE & TRANSLATE-X-0 = SHOW
+      REMOVE = INVISIBLE & TRANSLATE-X-FULL = DISAPPEAR
+
+      1. TOGGLE ADD, MASIH ADA CLASS = TIDAK BISA
+      2. TOGGLE ADD, TIDAK ADA CLASS = TIDAK BISA
+      3. TOGGLE ADD, MASIH ADA CLASS DENGAN ONCLICK = TIDAK BISA
+      4. TOGGLE ADD, TIDAK ADA CLASS DENGAN ONCLICK = TIDAK BISA
+
+      5. TOGGLE REMOVE, MASIH ADA CLASS = BISA, GBS BALIK
+      6. TOGGLE REMOVE, TIDAK ADA CLASS = TIDAK BISA
+
+      7. CLASS LIST REMOVE, MASIH ADA CLASS NYA = BISA (G BS NUTUP)
+
+      8. TOGGLE REMOVE & CLASS LIST ADD (IF), MASIH ADA CLASS = TIDAK BISA
+      9. NO TOGGLE, MASIH ADA CLASS & CLASSNYA DIREMOVE DAN DIADD (IF) = BISA NMBH TP NGGA NGEFEK
+      10. NO TOGGLE IN HERE. NO CLASSES, JUST INPUT A REMOVE = BISA BUKA TUTUP, TAPI KEBALIK
+        hamburgerMenu.addEventListener("click", function() {
+          navbar.classList.toggle("invisible");
+          navbar.classList.toggle("translate-x-full");
+          pages.classList.toggle("modal");
+      })
+      11. CLASS NYA ADA DAN TOGGLE IN SEMUA
+
+      KALO ADA INVISIBLE, ATAU TRANSLATE FULL, MAKA MEREKA BERDUA HILANG DAN DITAMBAHKAN VISIBLE ATAU TRANSLATE X FULL NYA TOGGLE
+      */
+
+      if(menu.classList.contains("invisible") && menu.classList.contains("translate-x-full")){
+        menu.classList.remove("invisible");
+        menu.classList.remove("translate-x-full");
+        menu.classList.add('translate-x-0');
+        menu.classList.add('visible');
+      } else{
+        menu.classList.remove("visible");
+        menu.classList.remove("translate-x-0");
+        menu.classList.add("invisible");
+        menu.classList.add("translate-x-full");
+      }
+      // bisa ditambah tapi ngga bisa dihapus
+
+
       // remove "visibility: hidden;" add "visibility: visible"
       // remove "transform: translateX(100%)" add "transform: translateX(0%)"
+      // invisible translate-x-full
     }
-    )
-    
+    )    
   </script>
   <div class="content 
    flex flex-col mr-0 sm:grid grid-rows-[autofit_minmax(250px, max-content)] max-w-full box-border pt-14 max-content gap-y-10 gap-x-1">
