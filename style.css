@@ -251,7 +251,7 @@ body{
         .navigation-bar ul.show{
             visibility: visible;
             transform: translateX(0%);
-            transition: 0.3s ease 300ms;  
+            /* transition: 0.3s ease 300ms;   */
         }    
             .unorderlist {
                 display:inherit;

@@ -27,7 +27,13 @@
     <div class="recomended-section pt-12 flex flex-col sm:flex flex-row row-start-3">
       BUT JUST FLEX COL WHO WORKINGGGG, ROW NOTT
       I JUST PLACING FLEX FIRST IN BREAKPOINT AND IT"S FUCKING WRONG AHAHHAHHAH
+
+
+    TASK TO DO = 
+    - CAN FIGURE OUT HOW TO REPAIR A TOGGLE JS FOR HAMBURGER MENU
+    - MAKING A NAVBAR BE ROW ON DEKSTOP MENU (SM)
    -->
+
 
 
   <!-- CONVERT TO TAILWIND -->
@@ -47,7 +53,7 @@
     /* .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;} */
     /* md:bg-black max-w-full box-border pt-14 grid grid-rows-auto-fit minmax-250px max-content gap-y-4 gap-x-1 */
     /* .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;} */
-    .navigation-bar ul.show{visibility: visible;transform: translateX(0%);transition: 0.3s ease 300ms;}  
+    /* .navigation-bar ul.show{visibility: visible;transform: translateX(0%);transition: 0.3s ease 300ms;}   */
 
   </style>
 </head>
@@ -59,23 +65,24 @@
     </div>
 
     <div class="navigation-bar">
-      <ul class=" flex justify-center flex-col absolute ml-auto align-start top-0 right-0 w-8/12 h-screen
-          bg-white overflow-y-auto invisible transition-all duration-300 ease-out z-0 translate-x-full my-[-2rem] mx-[-1.5rem]
-          align-start sm:unorderlist ml-auto flex flex-row list none ">
-        
-
-        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base " 
+      <ul class="unorderlist 
+      flex flex-col absolute ml-auto items-start justify-center top-0 right-0 w-[65%] h-screen bg-white overflow-y-auto invisible
+      transition-all duration-300 ease-out z-0 translate-x-full 
+      my-[-2rem] mx-[-1.5rem] sm:visible
+      ">
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>
-        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base"  
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]"  
           href="#"> New</a></li>
-        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#">Popular</a></li>
-        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#"> Trending</a></li>
-        <li class="pt-[2rem]"><a class="text-black font-normal sm:navbar text text-[#5d5f79] ml-[1.7rem] hover:text-[#f15e50] font-normal text-base" 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#"> Categories</a></li>  
       </ul>
-      <div class="flex sm: hamburger-menu hidden">
+      <!-- onclick="showSideBar(this)" -->
+      <div class="hamburger-menu flex sm:hidden">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
         <input type="checkbox" id="nav-check" class="hidden">
         <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform rotate-45 translate-y-[-2px] translate-x-[0px]
@@ -88,7 +95,24 @@
     </div>
     <!-- do content media queries first, then do the navbar. -->
   </div>
+  <script>
+    const hamburger = document.querySelector(".hamburger-menu");
+    hamburger.addEventListener("click",
+    function showSideBar(e){
+      const menu = document.querySelector(".unorderlist");
+      // menu.classList.add('translate-x-0');
+      // menu.classList.add('visible');
+      // BTW YG REMOVE BERJALAN, TAPI NGGA BISA DIBALIKIN LAGI, COBA CARI CARA BUAT BIKIN TOGGLE JS
 
+      menu.classList.remove('invisible');
+      menu.classList.remove('translate-x-full');
+      
+      // remove "visibility: hidden;" add "visibility: visible"
+      // remove "transform: translateX(100%)" add "transform: translateX(0%)"
+    }
+    )
+    
+  </script>
   <div class="content 
    flex flex-col mr-0 sm:grid grid-rows-[autofit_minmax(250px, max-content)] max-w-full box-border pt-14 max-content gap-y-10 gap-x-1">
     <div class="image-web h-auto row-start-1 row-end-1col-start-1 col-span-2 bg-cover pr-12">
