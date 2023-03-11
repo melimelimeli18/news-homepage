@@ -4,44 +4,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const body = document.body;
     const pages = document.querySelector(".pages");
 
-
 // hamburgerMenu.addEventListener("click", function() {
 //     navbar.classList.toggle("show");
-//     pages.classList.toggle("modal");
-// })
-
-// navbar is a ul
-// REMOVE
-
-
-// hamburgerMenu.addEventListener("click", function() {
-//     navbar.classList.toggle("invisible");
-//     navbar.classList.toggle("translate-x-full");
 //     pages.classList.toggle("modal");
 // })
 
 // The toggle() method of the classList property adds the class if it doesn't exist, and removes it if it does exist. Therefore, if you toggle a class that already exists on an element, it will remove the class, and if you toggle a class that doesn't exist on an element, it will add the class.
 
 hamburgerMenu.addEventListener("click", function() {
-    navbar.classList.toggle("invisible")
-    navbar.classList.toggle("visible");
+    const showNavbar = ["invisible","visible","translate-x-full","translate-x-0"];
+    for (let i = 0; i < showNavbar.length; i++) {
+        navbar.classList.toggle(showNavbar[i]);
+      }
 
-    navbar.classList.toggle("translate-x-full");
-    navbar.classList.toggle("translate-x-0");
-
-    pages.classList.toggle("block");
-    pages.classList.toggle("bg-black");
-    pages.classList.toggle("absolute");
-    pages.classList.toggle("inset-0");
-    pages.classList.toggle("opacity-40");
-    pages.classList.toggle("transition-all");
-    pages.classList.toggle("duration-300");
-    pages.classList.toggle("ease-out");
-    // pages.classList.toggle("delay-300");
+    const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
+    for (let i = 0; i < pagesStyle.length; i++) {
+        pages.classList.toggle(pagesStyle[i]);
+      }
 })
 
-
-if (navbar.classList.contains("show")) {
+if (navbar.classList.contains("invisible")) {
     body.style.overflowY = "hidden";
 } else {
     body.style.overflowY = "scroll";
