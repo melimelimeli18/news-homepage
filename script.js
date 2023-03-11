@@ -28,7 +28,16 @@ hamburgerMenu.addEventListener("click", function() {
 
     navbar.classList.toggle("translate-x-full");
     navbar.classList.toggle("translate-x-0");
-    pages.classList.toggle("modal");
+
+    pages.classList.toggle("block");
+    pages.classList.toggle("bg-black");
+    pages.classList.toggle("absolute");
+    pages.classList.toggle("inset-0");
+    pages.classList.toggle("opacity-40");
+    pages.classList.toggle("transition-all");
+    pages.classList.toggle("duration-300");
+    pages.classList.toggle("ease-out");
+    // pages.classList.toggle("delay-300");
 })
 
 
