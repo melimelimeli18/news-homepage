@@ -31,15 +31,20 @@
       BUT JUST FLEX COL WHO WORKINGGGG, ROW NOTT
       I JUST PLACING FLEX FIRST IN BREAKPOINT AND IT"S FUCKING WRONG AHAHHAHHAH
 
+    CHOOSE ONE 
+    - OPACITY 0
+    - VISIBILITY HIDDEN
+    - DISPLAY NONE
+    - HEIGHT AND WIDTH OVERFLOW 0 
+
+    PAKE OPACITY 0/100 
 
     TASK TO DO = 
-    - CAN FIGURE OUT HOW TO REPAIR A TOGGLE JS FOR HAMBURGER MENU
-    - MAKING A NAVBAR BE ROW ON DEKSTOP MENU (SM)
+    - RAPIHIN STYLE MENU NAVBAR BIAR SESUAI CONTOH
+    - SELIPIN STYLE HAMBURGER LOOPS YANG ADA DI TENGAH2 STYLE
+    - MASIH ADA YANG NGEGANJEL PAS AWAL RELOAD, BENERIN TOGGLENYA
    -->
 
-
-
-  <!-- CONVERT TO TAILWIND -->
   <title>Frontend Mentor | News homepage</title>
   <style>
     *{padding:0px; margin:0px;box-sizing: border-box;}
@@ -52,6 +57,9 @@
     .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(0px, -2px);}
     .hamburger input:checked ~ span:nth-child(4){transform : rotate(-45deg);}
     .hamburger input:checked ~ span:nth-child(3){transform:scale(0);}
+    .unorderlist{        transition: 0.3s ease;
+        z-index:0;
+        transform: translateX(100%);}
     /* .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;} */
     /* md:bg-black max-w-full box-border pt-14 grid grid-rows-auto-fit minmax-250px max-content gap-y-4 gap-x-1 */
     /* .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;} */
@@ -69,9 +77,10 @@
     <div class="navigation-bar">
       <ul class="unorderlist 
       flex flex-col absolute ml-auto items-start justify-center top-0 right-0 w-[65%] h-screen bg-white overflow-y-auto 
-      invisible translate-x-full
-      transition-all duration-300 ease-out z-0  
+      opacity-0 translate-x-full
+      z-0  
       my-[-2rem] mx-[-1.5rem] 
+
       ">
         <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>

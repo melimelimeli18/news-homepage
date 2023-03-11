@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // The toggle() method of the classList property adds the class if it doesn't exist, and removes it if it does exist. Therefore, if you toggle a class that already exists on an element, it will remove the class, and if you toggle a class that doesn't exist on an element, it will add the class.
 
 hamburgerMenu.addEventListener("click", function() {
-    const showNavbar = ["invisible","visible","translate-x-full","translate-x-0"];
+    const showNavbar = ["opacity-0","opacity-100","translate-x-full","translate-x-0"];
     for (let i = 0; i < showNavbar.length; i++) {
         navbar.classList.toggle(showNavbar[i]);
       }
@@ -23,7 +23,7 @@ hamburgerMenu.addEventListener("click", function() {
       }
 })
 
-if (navbar.classList.contains("invisible")) {
+if (navbar.classList.contains("visible")) {
     body.style.overflowY = "hidden";
 } else {
     body.style.overflowY = "scroll";
