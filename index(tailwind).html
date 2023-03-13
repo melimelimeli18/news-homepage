@@ -20,7 +20,12 @@
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
-    
+  extend: {
+    // Add custom classes here
+    customClasses: {
+      'responsive-ul': 'sm:flex-row',
+    }
+  }
   },
 }
  </script>
@@ -32,9 +37,9 @@
       I JUST PLACING FLEX FIRST IN BREAKPOINT AND IT"S FUCKING WRONG AHAHHAHHAH
 
     CHOOSE ONE 
-    - OPACITY 0
-    - VISIBILITY HIDDEN
-    - DISPLAY NONE
+    - OPACITY 0 (NGEDEMPET)
+    - VISIBILITY HIDDEN (ANIMATION GONE)
+    - DISPLAY NONE (ANIMATION GONE)
     - HEIGHT AND WIDTH OVERFLOW 0 
 
     PAKE OPACITY 0/100 
@@ -42,7 +47,6 @@
     TASK TO DO = 
     - RAPIHIN STYLE MENU NAVBAR BIAR SESUAI CONTOH
     - SELIPIN STYLE HAMBURGER LOOPS YANG ADA DI TENGAH2 STYLE
-    - MASIH ADA YANG NGEGANJEL PAS AWAL RELOAD, BENERIN TOGGLENYA
    -->
 
   <title>Frontend Mentor | News homepage</title>
@@ -73,29 +77,27 @@
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
-<!-- invisible translate-x-full -->
+
     <div class="navigation-bar">
       <ul class="unorderlist 
-      flex flex-col absolute ml-auto items-start justify-center top-0 right-0 w-[65%] h-screen bg-white overflow-y-auto 
-      opacity-0 translate-x-full
-      z-0  
-      my-[-2rem] mx-[-1.5rem] 
-
-      ">
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
+      flex flex-col absolute ml-auto items-start justify-center top-0 right-0 bg-white overflow-y-auto opacity-0 translate-x-full z-0 w-0 h-0 
+      my-[-2rem] mx-[-1.5rem] ml-auto 
+      sm:responsive-ul
+">
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]"  
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]"  
           href="#"> New</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#">Popular</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#"> Trending</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
           href="#"> Categories</a></li>  
       </ul>
 
       <!-- onclick="showSideBar(this)" -->
-      <div class="hamburger-menu flex sm:hidden">
+      <div class="hamburger-menu flex align-middle sm:hidden">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
         <input type="checkbox" id="nav-check" class="hidden">
         <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform  translate-y-[-2px] translate-x-[0px]
