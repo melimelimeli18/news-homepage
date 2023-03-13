@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //     }})
 
 function navbarChecked(){
-    const showNavbar = ["h-screen","w-[65%]","h-0","w-0","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
+    const showNavbar = ["h-screen","w-[65%]","right-[0%]","right-[-80%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
     for (let i = 0; i < showNavbar.length; i++) {
         navbar.classList.toggle(showNavbar[i]);
       }
