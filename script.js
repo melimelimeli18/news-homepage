@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     const navbar = document.querySelector(".navigation-bar ul");
-    const hamburgerMenu = document.querySelector(".hamburger input");
+    const hamburgerMenu = document.getElementById("nav-check");
     const body = document.body;
     const pages = document.querySelector(".pages");
 
 // hamburgerMenu.addEventListener("click", function() {
-    // const showNavbar = ["h-screen","w-[65%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
-    // for (let i = 0; i < showNavbar.length; i++) {
-    //     navbar.classList.toggle(showNavbar[i]);
-    //   }
-    // //   w-[65%] h-screen
-    // const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
-    // for (let i = 0; i < pagesStyle.length; i++) {
-    //     pages.classList.toggle(pagesStyle[i]);
-    //   }
+//     const showNavbar = ["h-screen","w-[65%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
+//     for (let i = 0; i < showNavbar.length; i++) {
+//         navbar.classList.toggle(showNavbar[i]);
+//       }
+//     //   w-[65%] h-screen
+//     const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
+//     for (let i = 0; i < pagesStyle.length; i++) {
+//         pages.classList.toggle(pagesStyle[i]);
+//       }
+//     })
 
 
 // hamburgerMenu.addEventListener("change", function(){
@@ -31,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //         for (let i = 0; i < hideNavbar.length; i++) {
 //             navbar.classList.toggle(hideNavbar[i]);
 //         }
-//         const pagesStyleModal = ["hidden", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
-//         for (let i = 0; i < pagesStyleModal.length; i++) {
-//             pages.classList.toggle(pagesStyleModal[i]);
+//         const pagesStyleHide = ["hidden", "block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
+//         for (let i = 0; i < pagesStyleHide.length; i++) {
+//             pages.classList.toggle(pagesStyleHide[i]);
 //         }
 //     }})
 
 function navbarChecked(){
-  const showNavbar = ["h-screen","w-[65%]","right-[0%]","right-[-80%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
+  const showNavbar = ["h-screen","w-[65%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
   for (let i = 0; i < showNavbar.length; i++) {
       navbar.classList.toggle(showNavbar[i]);
     }
@@ -46,7 +47,7 @@ function navbarChecked(){
   for (let i = 0; i < pagesStyle.length; i++) {
       pages.classList.toggle(pagesStyle[i]);
     }
-}
+  }
 
 hamburgerMenu.addEventListener("change", function(){
   if (this.checked) {
@@ -56,25 +57,22 @@ hamburgerMenu.addEventListener("change", function(){
     } else {
       navbarChecked();
       body.style.overflowY = "scroll";
-      body.style.overflowX = "scroll";
+      body.style.overflowX = "hidden";
     }  
+
 })
 
-console.log(navbarChecked());
-//   const screenWidth = window.innerWidth;
-//     if (screenWidth > 640) {
-//       return false;
-//     }
-//     else {
-//       return true;
-//     }
-// // const screenWidth = window.innerWidth
-//       if (screenWidth > 640) {
-//         document.querySelector('hamburger').checked = false;
-//       }
-//       else {
-//         document.querySelector('hamburger').checked = true;
-//       }
+
+
+
+  
+// const screenWidth = window.innerWidth
+      // if (screenWidth > 640) {
+      //   document.querySelector('hamburger').checked = false;
+      // }
+      // else {
+      //   document.querySelector('hamburger').checked = true;
+      // }
 
 })
 
@@ -85,6 +83,7 @@ console.log(navbarChecked());
 //     navbar.classList.toggle("show");
 //     pages.classList.toggle("modal");
 // })
+
 // The toggle() method of the classList property adds the class if it doesn't exist, and removes it if it does exist. Therefore, if you toggle a class that already exists on an element, it will remove the class, and if you toggle a class that doesn't exist on an element, it will add the class.
 
 

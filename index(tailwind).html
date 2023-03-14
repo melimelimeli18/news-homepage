@@ -30,24 +30,7 @@
   },
 }
  </script>
-  <!-- THINKING AREA
-    I already set the recomendation section into flex-col, because i want them to ordering by 
-    column,
-    <div class="recomended-section pt-12 flex flex-col sm:flex flex-row row-start-3">
-      BUT JUST FLEX COL WHO WORKINGGGG, ROW NOTT
-      I JUST PLACING FLEX FIRST IN BREAKPOINT AND IT"S FUCKING WRONG AHAHHAHHAH
 
-    CHOOSE ONE 
-    - OPACITY 0 (NGEDEMPET)
-    - VISIBILITY HIDDEN (ANIMATION GONE)
-    - DISPLAY NONE (ANIMATION GONE)
-    - HEIGHT AND WIDTH OVERFLOW 0 
-
-    PAKE OPACITY 0/100 
-
-    TASK TO DO = 
-    - BENERIN NAVBAR BUAT DEKSTOPNYA
-   -->
 
   <title>Frontend Mentor | News homepage</title>
   <style>
@@ -76,16 +59,16 @@
   </style>
 </head>
 <body class="max-w-full py-[2rem] px-[1.5rem] sm:py-[3.5rem] sm:px-[5rem] max-w-full  ">
-  <div class="pages" ></div> 
+  <div class="pages"></div> 
   <div class="w-full flex header sm:flex justify-between item-center relative ">
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="navigation-bar align-bottom items-start justify-end">
       <ul class="unorderlist 
-      flex flex-col absolute ml-auto justify-start pt-[40%] top-0 right-[-80%] bg-red overflow-y-auto opacity-0 translate-x-full z-0 my-[-2rem] mx-[-1.5rem] pl-5
+      flex flex-col absolute ml-auto justify-start pt-[40%] top-0 right-0 bg-white overflow-y-auto opacity-0 translate-x-full my-[-2rem] mx-[-1.5rem] pl-5 
       
-      sm:flex-row sm:w-auto sm:h-auto sm:w-full sm:translate-x-0 sm:opacity-100 sm:bg-transparent sm:justify-end sm:p-0 sm:top-0 sm:right-0 sm:align-middle sm: ">
+      sm:flex-row sm:w-auto sm:h-auto sm:w-full sm:translate-x-0 sm:opacity-100 sm:bg-transparent sm:justify-end sm:p-0 sm:top-0 sm:align-middle  ">
 
         <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>
@@ -99,8 +82,8 @@
           href="#"> Categories</a></li>  
       </ul>
 
-      <div class="hamburger-menu flex pr-0 m-0 sm:hidden sm:invisible">
-       <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
+      <div class="hamburger-menu flex pr-0 m-0 align-middle justify-between  sm:hidden">
+       <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer sm:appereance-none sm:invisibile">
         <input type="checkbox" id="nav-check" class="hidden">
         <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500 origin-top-left
         "></span>
