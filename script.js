@@ -16,14 +16,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //   }
 
 
-
 // hamburgerMenu.addEventListener("change", function(){
 //     if (this.checked) {
 //         const showNavbar = ["h-screen","w-[65%]","translate-x-0","opacity-100","opacity-0"];
 //         for (let i = 0; i < showNavbar.length; i++) {
 //             navbar.classList.toggle(showNavbar[i]);
 //         }
-
 //         const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
 //         for (let i = 0; i < pagesStyle.length; i++) {
 //             pages.classList.toggle(pagesStyle[i]);
@@ -40,30 +38,47 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //     }})
 
 function navbarChecked(){
-    const showNavbar = ["h-screen","w-[65%]","right-[0%]","right-[-80%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
-    for (let i = 0; i < showNavbar.length; i++) {
-        navbar.classList.toggle(showNavbar[i]);
-      }
-    const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
-    for (let i = 0; i < pagesStyle.length; i++) {
-        pages.classList.toggle(pagesStyle[i]);
-      }
+  const showNavbar = ["h-screen","w-[65%]","right-[0%]","right-[-80%]","translate-x-full","translate-x-0","opacity-0", "opacity-100"];
+  for (let i = 0; i < showNavbar.length; i++) {
+      navbar.classList.toggle(showNavbar[i]);
+    }
+  const pagesStyle = ["block", "bg-black", "absolute", "inset-0", "opacity-40", "transition-all", "duration-300", "ease-out"];
+  for (let i = 0; i < pagesStyle.length; i++) {
+      pages.classList.toggle(pagesStyle[i]);
+    }
 }
+
 hamburgerMenu.addEventListener("change", function(){
-    if (this.checked) {
-        navbarChecked();
-        body.style.overflowY = "hidden";
-        body.style.overflowX = "hidden";
-      } else {
-        navbarChecked();
-        body.style.overflowY = "scroll";
-        body.style.overflowX = "scroll";
-      }  
+  if (this.checked) {
+      navbarChecked();
+      body.style.overflowY = "hidden";
+      body.style.overflowX = "hidden";
+    } else {
+      navbarChecked();
+      body.style.overflowY = "scroll";
+      body.style.overflowX = "scroll";
+    }  
 })
 
+console.log(navbarChecked());
+//   const screenWidth = window.innerWidth;
+//     if (screenWidth > 640) {
+//       return false;
+//     }
+//     else {
+//       return true;
+//     }
+// // const screenWidth = window.innerWidth
+//       if (screenWidth > 640) {
+//         document.querySelector('hamburger').checked = false;
+//       }
+//       else {
+//         document.querySelector('hamburger').checked = true;
+//       }
 
 })
 
+// bikin screen ketika udh nyampe segitu, functionnya bakal di batalin
 
 
 // hamburgerMenu.addEventListener("click", function() {

@@ -14,6 +14,7 @@
   <!-- JAVASCRIPT -->
   <script src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
  <script>
   module.exports = {
   theme: {
@@ -57,59 +58,62 @@
     body a {text-decoration:none;}
     .heading2{font-size:2rem;font-weight:700;}
     .heading3{font-size:1.3rem;font-weight:700;}
-    .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(0px, -2px);}
+    .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(-8px, -9px);}
     .hamburger input:checked ~ span:nth-child(4){transform : rotate(-45deg);}
     .hamburger input:checked ~ span:nth-child(3){transform:scale(0);}
-    .unorderlist{        transition: 0.3s ease;
-        z-index:0;
-        transform: translateX(100%);}
+    .unorderlist{transition: 0.3s ease;z-index:0;transform: translateX(100%);}
     /* .content {max-width:100%;box-sizing: border-box;padding-top:3.5rem;display:grid;grid-template-rows: repeat(auto-fit, minmax(250px, max-content));row-gap:4rem;column-gap:1rem;} */
     /* md:bg-black max-w-full box-border pt-14 grid grid-rows-auto-fit minmax-250px max-content gap-y-4 gap-x-1 */
     /* .recomended-section{grid-column:1/ span 3;grid-row:3;display:flex;padding-top:3rem;} */
     /* .navigation-bar ul.show{visibility: visible;transform: translateX(0%);transition: 0.3s ease 300ms;}   */
+    @media screen and (max-width:680px){
+      .unorderlist li {
+        padding-right:0;
+      }
+    }
+
 
   </style>
 </head>
-<body class="overflow-x-hidden max-w-full py-[2rem] px-[1.5rem] sm:py-[3.5rem] sm:px-[5rem] max-w-full  ">
+<body class="max-w-full py-[2rem] px-[1.5rem] sm:py-[3.5rem] sm:px-[5rem] max-w-full  ">
   <div class="pages" ></div> 
   <div class="w-full flex header sm:flex justify-between item-center relative ">
     <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
-    <div class="flex-grow"></div>
-    <div class="navigation-bar">
+    <div class="navigation-bar align-bottom items-start justify-end">
       <ul class="unorderlist 
-      flex flex-col absolute ml-auto items-start justify-start pt-[40%] top-0 right-[-80%] bg-white overflow-y-auto opacity-0 translate-x-full z-0  
-      my-[-2rem] mx-[-1.5rem] sm:flex-row sm:w-auto sm:h-auto sm:w-full sm:translate-x-0 sm:opacity-100 sm:bg-transparent sm:justify-end sm:p-0 sm:align-middle">
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal md:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]" 
+      flex flex-col absolute ml-auto justify-start pt-[40%] top-0 right-[-80%] bg-red overflow-y-auto opacity-0 translate-x-full z-0 my-[-2rem] mx-[-1.5rem] pl-5
+      
+      sm:flex-row sm:w-auto sm:h-auto sm:w-full sm:translate-x-0 sm:opacity-100 sm:bg-transparent sm:justify-end sm:p-0 sm:top-0 sm:right-0 sm:align-middle sm: ">
+
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50]" 
           href="#">Home</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50]"  
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50]"  
           href="#"> New</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
           href="#">Popular</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
           href="#"> Trending</a></li>
-        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] ml-[1.7rem] font-normal text-base hover:text-[#f15e50] " 
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
           href="#"> Categories</a></li>  
       </ul>
 
-      <!-- onclick="showSideBar(this)" -->
-      <div class="hamburger-menu flex align-middle sm:hidden sm:appearance-none sm:invisible">
+      <div class="hamburger-menu flex pr-0 m-0 sm:hidden sm:invisible">
        <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer">
         <input type="checkbox" id="nav-check" class="hidden">
-        <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform  translate-y-[-2px] translate-x-[0px]
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500 origin-top-left
         "></span>
-        <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500"></span>
-        <span class="bg-black block w-7 h-0.5 pt-0.5 transition-all duration-500 origin-top-left transform
-        "></span> <!-- animation -->
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500"></span>
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500 origin-top-left "></span>
         </label>
       </div>
     </div>
   </div>
   <div class="content 
    flex flex-col mr-0 sm:grid grid-rows-[autofit_minmax(250px, max-content)] max-w-full box-border pt-14 max-content gap-y-10 gap-x-1">
-    <div class="image-web h-auto row-start-1 row-end-1col-start-1 col-span-2 bg-cover pr-12">
-      <img class="max-w-full w-full object-cover" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
+    <div class="image-web  row-start-1 row-end-1 col-start-1 col-span-2 bg-cover pr-12">
+      <img class="bg-red h-[45vh] w-[100%] m-0 p-0 object-cover sm:max-w-full w-full" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
     </div>
 
     <p class="heading1 text-black font-extrabold text-5xl row-start-2 row-end-2 col-start-1 col-end-1 pr-10">The Bright Future of Web 3.0?</p>
