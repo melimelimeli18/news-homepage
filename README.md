@@ -14,7 +14,7 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [News Homepage](https://your-live-site-url.com)
+- Live Site URL: [News Homepage](https://melisaolivia.github.io/news-homepage/)
 - My Github Profile : [Melisa Olivia](https://github.com/melisaolivia)
 
 ## My process 
@@ -22,8 +22,8 @@ It's a fun process to solve this challenge! I learn a lot of TailwindCSS framewo
 
 ## Screenshot result
 
-![Desktop preview](assets\images\screenshot.png)
-![Mobile preview](assets\images\screenshotMOBILE.png)
+![Desktop preview](assets/images/screenshot.png)
+![Mobile preview](assets/images/screenshotMOBILE.png)
 
 ### Built with
 
