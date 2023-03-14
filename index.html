@@ -1,147 +1,137 @@
-<!-- deleting double a tag on section2, make all the tag a with target_blank -->
-<!-- there's a double class text in style (heading1,) fix it, because it'll overlapping -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-base">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
   <script src="script.js"></script>
-  <title>Frontend Mentor | News homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- To DO LIST :
-
-    - if all finished, convert them all into tailwindcss
-  -->
+  <title>News homepage</title>
   <style>
+    *{padding:0px; margin:0px;box-sizing: border-box;}
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    body{font-family: 'Inter', sans-serif;}
+    body a {text-decoration:none;}
+    .heading2{font-size:2rem;font-weight:700;}
+    .heading3{font-size:1.3rem;font-weight:700;}
+    .hamburger input:checked ~ span:nth-child(2){transform : rotate(45deg) translate(-8px, -9px);}
+    .hamburger input:checked ~ span:nth-child(4){transform : rotate(-45deg);}
+    .hamburger input:checked ~ span:nth-child(3){transform:scale(0);}
+    .unorderlist{transition: 0.3s ease;z-index:0;transform: translateX(100%);}
+    @media screen and (max-width:680px){.unorderlist li {padding-right:0;}}
   </style>
 </head>
-<body>
+
+<body class="max-w-full py-[2rem] px-[1.5rem] sm:py-[3.5rem] sm:px-[5rem] max-w-full  ">
   <div class="pages"></div> 
-  <div class="header">
-    <div class="logo">
+  <div class="w-full flex header sm:flex justify-between item-center relative ">
+    <div class="logo top-0 left-0">
       <img src="assets/images/logo.svg" alt="" srcset="">
     </div>
+    <div class="navigation-bar align-bottom items-start justify-end">
+      <ul class="unorderlist flex flex-col absolute ml-auto justify-start pt-[40%] top-0 right-0 bg-white overflow-y-auto opacity-0 translate-x-full my-[-2rem] mx-[-1.5rem] pl-5 w-0
+      sm:flex-row sm:w-auto sm:h-auto sm:w-full sm:translate-x-0 sm:opacity-100 sm:bg-transparent sm:justify-end sm:p-0 sm:top-0 sm:align-middle  ">
 
-    <div class="navigation-bar">
-      <ul class="unorderlist">
-        <li><a class="navbar text" href="#">Home</a></li>
-        <li><a class="navbar text" href="#"> New</a></li>
-        <li><a class="navbar text" href="#">Popular</a></li>
-        <li><a class="navbar text" href="#"> Trending</a></li>
-        <li><a class="navbar text" href="#"> Categories</a></li>  
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50]" 
+          href="file.html">Home</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50]"  
+          href="file.html"> New</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
+          href="file.html">Popular</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
+          href="file.html"> Trending</a></li>
+        <li class="pt-[2rem]"><a class="navbar text text-black font-normal sm:text-[#5d5f79] sm:pr-[1.7rem] sm:font-normal sm:text-base hover:text-[#f15e50] " 
+          href="file.html"> Categories</a></li>  
       </ul>
-      <div class="hamburger-menu">
-       <label for="nav-check"class="hamburger">
-        <input type="checkbox" id="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <div class="hamburger-menu flex pr-0 m-0 align-middle justify-between  sm:hidden">
+       <label for="nav-check" class="hamburger flex flex-col justify-between width w-fit h-5 cursor-pointer sm:appereance-none sm:invisibile">
+        <input type="checkbox" id="nav-check" class="hidden">
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500 origin-top-left
+        "></span>
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500"></span>
+        <span class="bg-black block w-10 h-[3px] rounded-full pt-[0.1rem] transition-all duration-500 origin-top-left "></span>
         </label>
       </div>
     </div>
-    
   </div>
 
-  <div class="content">
-    <div class="image-web">
-      <img class="" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
+  <div class="content flex flex-col mr-0 sm:grid grid-rows-[autofit_minmax(250px, max-content)] max-w-full box-border pt-14 max-content gap-y-10 gap-x-1">
+    <div class="image-web  row-start-1 row-end-1 col-start-1 col-span-2 bg-cover pr-12">
+      <img class="bg-red h-[45vh] w-[100%] m-0 p-0 object-cover sm:max-w-full w-full" src="assets/images/image-web-3-desktop.jpg" alt="" srcset="">
     </div>
+
+    <p class="heading1 text-black font-extrabold text-5xl row-start-2 row-end-2 col-start-1 col-end-1 pr-10">The Bright Future of Web 3.0?</p>
     
-    
-    <p class="heading1">The Bright Future of Web 3.0?</p>
-    
-    <div class="section1">
-      <div class="text-section1">
-        <p class="text">
-        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
-      </p>
+    <div class="section1 row-start-2 col-start-2 pr-12 ">
+      <div class="text-section1 mb-14">
+        <p class="text text-[#5d5f79] font-normal text-base">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
       </div>
-      <div class="button"> 
-        <a>READ MORE</a>
+
+      <div class="button flex"> 
+        <a href="file.html" class="bg-[#f15e50] text-[#fffdfa] py-4 px-12 cursor-pointer hover:bg-[#00001a] transition-all duration-300 tracking-widest">READ MORE</a>
       </div>
     </div>
 
-    <!-- i want when i click this, it will make a new link -->
-    <div class="section2 news">
-      <p class="heading2">New</p>
+    <div class="section2 news row-start-1 row-span-2 col-start-3 bg-[#00001a] flex flex-col max-w-full py-8 px-8 relative box-border">
+      <p class="heading2 text-[#e9ab53] pb-8">New</p>
       <div class="news-section">
-        <a href="">
-          <a href="#">
-            <p class="heading3">Hydrogen VS Electric Cars</p>
-          </a>
-        </a>
-        <p class="text">Will hydrogen-fueled cars ever catch up to EVs?</p>
+          <a href="file.html"><p class="heading3 text-[#fffdfa] pb-4 hover:text-[#e9ab53]">Hydrogen VS Electric Cars</p></a>
+          <p class="text text-[#5d5f79] font-normal text-base">Will hydrogen-fueled cars ever catch up to EVs?</p>
       </div>
-      <hr>
+      <hr class="border-[#5d5f79] my-8 mx-0">
       <div class="news-section">
-        <a href="">
-          <a href="#">
-            <p class="heading3">The Downsides of AI Artistry</p>
+          <a href="file.html">
+            <p class="heading3 text-[#fffdfa] pb-4 hover:text-[#e9ab53]">The Downsides of AI Artistry</p>
           </a>
-        </a>
-        <p class="text">What are the possible adverse effects of on-demand AI image generation?</p>
+        <p class="text text-[#5d5f79] font-normal text-base">What are the possible adverse effects of on-demand AI image generation?</p>
       </div>
-      <hr>
+      <hr class="border-[#5d5f79] my-8 mx-0">
       <div class="news-section">
-        <a href="">
-          <a href="#">
-            <p class="heading3">  Is VC Funding Drying Up?</p>
-          </a>
-        </a>
-        <p class="text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        <a href="file.html"><p class="heading3 text-[#fffdfa] pb-4 hover:text-[#e9ab53]">  Is VC Funding Drying Up?</p></a>
+        <p class="text text-[#5d5f79] font-normal text-base">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
       </div>
     </div>
 
-    <!-- making this a label and hovering to, so when i hover the color change and it will membesar sedikit seperti website website lainya -->
-    <div class="recomended-section">
-      
-      <label for="link-sc-1">
-        <div class="recomendation-section">
-          <img src="assets/images/image-retro-pcs.jpg" alt="" srcset="">
-          <div class="text-section">
-            <p class="heading2">01</p>
-            <a href="#" id="link-sc-1">
-              <p class="heading3"> Reviving Retro PCs</p>
-            </a>
-            <p class="text">What happens when old PCs are given modern upgrades?</p>
+    <div class="recomended-section mt-7 flex flex-col sm:flex-row col-start-1 col-span-3 row-start-">
+      <label for="link-sc-1" class="mt-10">
+        <div class="recomendation-section flex flex-row h-[fit-content] w-[fit-content] sm:mr-[1rem] w-[26rem] ">
+          <img src="assets/images/image-retro-pcs.jpg" class="h-[150px] w-[30%] object-cover mr-[1rem]" alt="" srcset="">
+          <div class="text-section pl-[1rem] flex flex-col">
+            <p class="heading2 text-[#c5c6ce]">01</p>
+            <a href="file.html" id="link-sc-1" class=""><p class="heading3 text-black pt-[1.3rem] hover:text-[#f15e50]"> Reviving Retro PCs</p></a>
+            <p class="text font-normal text-base pt-[1.3rem] text-[#5d5f79]">What happens when old PCs are given modern upgrades?</p>
           </div>
         </div>
       </label>
-        
-      <label for="link-sc-2">
-        <div class="recomendation-section">
-          <img src="assets/images/image-top-laptops.jpg" alt="" srcset="">
-          <div class="text-section">
-            <p class="heading2">02</p>
-            <a href="#" id="link-sc-2">
-              <p class="heading3">Top 10 Laptops of 2022</p>
-            </a>
-            <p class="text">Our best picks for various needs and budgets.</p>
+      <label for="link-sc-2" class="mt-10">
+        <div class="recomendation-section flex flex-row mr-[1rem] h-[fit-content] w-[fit-content] sm:mr-[1rem] w-[26rem]">
+          <img src="assets/images/image-top-laptops.jpg" class="h-[150px] w-[30%] object-cover mr-[1rem]" alt="" srcset="">
+          <div class="text-section pl-[1rem] flex flex-col">
+            <p class="heading2 text-[#c5c6ce]">02</p>
+            <a href="file.html" id="link-sc-2"><p class="heading3 text-black pt-[1.3rem] hover:text-[#f15e50]">Top 10 Laptops of 2022</p></a>
+            <p class="text font-normal text-base pt-[1.3rem] text-[#5d5f79]">Our best picks for various needs and budgets.</p>
           </div>
         </div>
       </label>
-
-      <label for="link-sc-3">
-        <div class="recomendation-section">
-          <img src="assets/images/image-gaming-growth.jpg" alt="" srcset="">
-          <div class="text-section">
-            <p class="heading2">03</p>
-            <a href="#" id="link-sc-3">
-              <p class="heading3">The Growth of Gaming</p>
-            </a>
-            <p class="text">  How the pandemic has sparked fresh opportunities.</p>
+      <label for="link-sc-3" class="mt-10">
+        <div class="recomendation-section flex flex-row mr-[1rem] h-[fit-content] w-[fit-content] sm:mr-[1rem] w-[26rem]">
+          <img src="assets/images/image-gaming-growth.jpg" class="h-[150px] w-[30%] object-cover mr-[1rem]" alt="" srcset="">
+          <div class="text-section pl-[1rem] flex flex-col">
+            <p class="heading2 text-[#c5c6ce]">03</p>
+            <a href="file.html" id="link-sc-3"><p class="heading3 text-black pt-[1.3rem] hover:text-[#f15e50]">The Growth of Gaming</p></a>
+            <p class="text font-normal text-base pt-[1.3rem] text-[#5d5f79]">  How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
-            </div>
-      </label>
+      </label>  
+    </div>
   </div>
 
-  <div class="attribution">
+  <div class="attribution pt-[4rem]">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/melisaolivia" target="_blank">Melisa Olivia</a>.
   </div>
