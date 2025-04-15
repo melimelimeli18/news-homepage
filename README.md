@@ -14,7 +14,7 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [News Homepage](https://melisaolivia.github.io/news-homepage/)
+- Live Site URL: [News Homepage](https://news-homepage-five-blond.vercel.app/)
 - My Github Profile : [Melisa Olivia](https://github.com/melisaolivia)
 
 ## My process 
